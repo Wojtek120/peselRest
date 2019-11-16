@@ -1,11 +1,10 @@
 package pl.wojtek120.pesel.web.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.wojtek120.pesel.model.dto.UserDto;
 import pl.wojtek120.pesel.model.services.UserService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -26,5 +25,15 @@ public class UserController {
     @GetMapping
     public List<UserDto> getAllUsers() {
         return userService.getAll();
+    }
+
+    /**
+     * Add new user to database
+     *
+     * @param user - user dto
+     */
+    @PostMapping
+    public void addNewUser(@Valid @RequestBody UserDto user) {
+        userService.add(user);
     }
 }

@@ -30,6 +30,12 @@ public class UserService {
         return userRepository.findAll().stream().map(this::entityToDto).collect(Collectors.toList());
     }
 
+
+
+    public void add(UserDto user) {
+        userRepository.save(dtoToEntity(user));
+    }
+
     /**
      * Convert User entity to data transfer object
      *

@@ -20,13 +20,13 @@ public class UserDto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "First name must not be blank")
     private String firstName;
 
-    @NotBlank
+    @NotBlank(message = "Last name must not be blank")
     private String lastName;
 
-    @PESEL
+    @PESEL(message = "PESEL number is invalid")
     private String pesel;
 
     @Getter(AccessLevel.NONE)
