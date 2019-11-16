@@ -1,8 +1,6 @@
 package pl.wojtek120.pesel.model.dto;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Getter;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.pl.PESEL;
 
@@ -12,8 +10,8 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
 @Data
-@Getter
 @Slf4j
+@NoArgsConstructor @AllArgsConstructor
 public class UserDto {
 
     @Id
